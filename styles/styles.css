@@ -1,0 +1,266 @@
+/* Start of CSS Reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  /* text-wrap: balance; */
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* End of CSS Reset */
+
+:root {
+    --white: hsl(0, 0%, 100%);
+
+    --stone-100: hsl(30, 54%, 90%);
+    --stone-150: hsl(30, 18%, 87%);
+    --stone-600: hsl(30, 10%, 34%);
+    --stone-900: hsl(24, 5%, 18%);
+
+    --brown-800: hsl(14, 45%, 36%);
+
+    --rose-800: hsl(332, 51%, 32%);
+    --rose-50: hsl(330, 100%, 98%);
+    
+    --font-header: "Young Serif", serif;
+    --font-text: "Outfit", serif;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--stone-100);
+}
+
+article {
+    background-color: var(--white);
+}
+
+.text-content {
+    padding: 40px 32px;
+}
+
+@media screen and (min-width: 48rem) {
+    article {
+        margin: 128px 0;
+        max-width: clamp(38.5rem, 60vw, 46rem);
+        border-radius: 24px;
+        padding: 40px;
+    }
+
+    img {
+        border-radius: 12px;
+        margin-bottom: 40px;
+    }
+
+    .text-content {
+        padding: 0;
+    }
+}
+
+h1 {
+    color: var(--stone-900);
+    font-family: var(--font-header);
+    font-size: 2.25rem;
+    margin-bottom: 24px;
+}
+
+h2 {
+    color: var(--brown-800);
+    font-family: var(--font-header);
+    font-weight: 400;
+    font-size: 1.75rem;
+    margin-bottom: 24px;
+}
+
+hr {
+    border-top: 1px solid var(--stone-150);
+    margin: 32px 0;
+}
+
+.brief-description {
+    color: var(--stone-600);
+    font-family: var(--font-text);
+    font-size: 1rem;
+    margin-bottom: 32px;
+}
+
+.preparation-time {
+    padding: 24px;
+    margin-bottom: 32px;
+}
+
+.preparation-time h2 {
+    color: var(--rose-800);
+    font-family: var(--font-text);
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+}
+
+.preparation-time ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 25px;
+}
+
+.preparation-time li {
+    color: var(--stone-600);
+    font-family: var(--font-text);
+    padding-left: 20px;
+}
+
+.preparation-time li::marker {
+    color: var(--rose-800);
+}
+
+.ingredients ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 25px;
+}
+
+.ingredients li {
+    color: var(--stone-600);
+    font-family: var(--font-text);
+    padding-left: 15px;
+}
+
+.ingredients li::marker {
+    color: var(--brown-800);
+}
+
+.instructions ol {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 25px;
+}
+
+.instructions li {
+    color: var(--stone-600);
+    font-family: var(--font-text);
+    padding-left: 15px;
+}
+
+.instructions li::marker {
+    color: var(--brown-800);
+    font-family: var(--font-text);
+    font-weight: 700;
+}
+
+.nutrition p {
+    color: var(--stone-600);
+    font-family: var(--font-text);
+    margin-bottom: 24px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+tr {
+    display: flex;
+    gap: 16px;
+    border-bottom: 1px solid var(--stone-150);
+    margin-bottom: 12px;
+    padding: 0 32px 12px;
+}
+
+tr:last-child {
+    border: none;
+    margin: 0;
+    padding-bottom: 0;
+}
+
+th, td {
+    display: inline-block;
+    max-width: 18rem;
+    width: 100%;
+}
+
+th {
+    color: var(--stone-600);
+    font-family: var(--font-text);
+}
+
+td {
+    color: var(--brown-800);
+    font-family: var(--font-text);
+    font-weight: 700;
+}
