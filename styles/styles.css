@@ -41,10 +41,10 @@ button, input, label {
 }
 
 /* Balance text wrapping on headings */
-h1, h2,
+/* h1, h2,
 h3, h4 {
-  /* text-wrap: balance; */
-}
+  text-wrap: balance;
+} */
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
@@ -103,7 +103,7 @@ body {
     background-color: var(--stone-100);
 }
 
-article {
+.recipe-container {
     background-color: var(--white);
 }
 
@@ -112,14 +112,14 @@ article {
 }
 
 @media screen and (min-width: 48rem) {
-    article {
+    .recipe-container {
         margin: 128px 0;
         max-width: clamp(38.5rem, 60vw, 46rem);
         border-radius: 24px;
         padding: 40px;
     }
 
-    img {
+    .recipe-image {
         border-radius: 12px;
         margin-bottom: 40px;
     }
@@ -132,7 +132,8 @@ article {
 h1 {
     color: var(--stone-900);
     font-family: var(--font-header);
-    font-size: 2.25rem;
+    font-weight: 400;
+    font-size: clamp(2.25rem, 7vw, 2.5rem);
     margin-bottom: 24px;
 }
 
@@ -228,13 +229,13 @@ hr {
     margin-bottom: 24px;
 }
 
-table {
+.nutrition table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
 }
 
-tr {
+.nutrition tr {
     display: flex;
     gap: 16px;
     border-bottom: 1px solid var(--stone-150);
@@ -242,24 +243,24 @@ tr {
     padding: 0 32px 12px;
 }
 
-tr:last-child {
+.nutrition tr:last-child {
     border: none;
     margin: 0;
     padding-bottom: 0;
 }
 
-th, td {
+.nutrition th, .nutrition td {
     display: inline-block;
     max-width: 18rem;
     width: 100%;
 }
 
-th {
+.nutrition th {
     color: var(--stone-600);
     font-family: var(--font-text);
 }
 
-td {
+.nutrition td {
     color: var(--brown-800);
     font-family: var(--font-text);
     font-weight: 700;
