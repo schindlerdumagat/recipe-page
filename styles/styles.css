@@ -258,6 +258,7 @@ hr {
 .nutrition th {
     color: var(--stone-600);
     font-family: var(--font-text);
+    font-weight: 400;
 }
 
 .nutrition td {
