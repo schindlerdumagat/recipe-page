@@ -119,7 +119,7 @@ body {
         padding: 40px;
     }
 
-    .recipe-image {
+    .recipe-container img {
         border-radius: 12px;
         margin-bottom: 40px;
     }
@@ -250,8 +250,6 @@ hr {
 }
 
 .nutrition th, .nutrition td {
-    display: inline-block;
-    max-width: 18rem;
     width: 100%;
 }
 
