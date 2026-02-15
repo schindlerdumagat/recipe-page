@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
 
+    <title>Frontend Mentor | Recipe page</title>
+
     <link
       rel="icon"
       type="image/png"
@@ -12,10 +14,92 @@
       href="./assets/images/favicon-32x32.png"
     />
 
-    <title>Frontend Mentor | Recipe page</title>
+    <link rel="preload" href="assets/fonts/young-serif-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="assets/fonts/outfit-v15-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="assets/fonts/outfit-v15-latin-600.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="assets/fonts/outfit-v15-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles/style.css">
 
   </head>
   <body>
-    
+    <main>
+      <article class="recipe">
+        <img src="assets/images/image-omelette.jpeg" alt="" class="recipe__banner" width="1312" height="">
+        <div class="recipe__content">
+          <section id="overview" class="recipe__section">
+            <h1 class="recipe__title">Simple Omelette Recipe</h1>
+            <p class="recipe__description">An easy and quick dish, perfect for any meal. </p>
+          </section>
+          <section id="preparation-time" class="recipe__section--preparation">
+            <h2 class="recipe__title--preparation">Preparation time</h2>
+            <ul class="timings">
+              <li class="timing"><strong class="timing__highlight">Total:</strong> Approximately 10 minutes</li>
+              <li class="timing"><strong class="timing__highlight">Preparation:</strong> 5 minutes</li>
+              <li class="timing"><strong class="timing__highlight">Cooking:</strong> 5 minutes</li>
+            </ul>
+          </section>
+          <section id="ingredients" class="recipe__section">
+            <h2 class="recipe__section-title">Ingredients</h2>
+            <ul class="ingredients">
+              <li class="ingredient">2-3 large eggs</li>
+              <li class="ingredient">Salt, to taste</li>
+              <li class="ingredient">Pepper, to taste</li>
+              <li class="ingredient">1 tablespoon of butter or oil</li>
+              <li class="ingredient">Optional fillings: cheese, diced vegetables, cooked meats, herbs</li>
+            </ul>
+          </section>
+          <hr class="separator">
+          <section id="instructions" class="recipe__section">
+            <h2 class="recipe__section-title">Instructions</h2>
+            <ol class="instructions">
+              <li class="instruction">
+                <p class="instruction__text"><strong class="instruction__highlight">Beat the eggs:</strong> In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture.</p>
+              </li>
+              <li class="instruction">
+                <p class="instruction__text"><strong class="instruction__highlight">Heat the pan:</strong> Place a non-stick frying pan over medium heat and add butter or oil.</p>
+              </li>
+              <li class="instruction">
+                <p class="instruction__text"><strong class="instruction__highlight">Cook the omelette:</strong> Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat the surface.</p>
+              </li>
+              <li class="instruction">
+                <p class="instruction__text"><strong class="instruction__highlight">Add fillings (optional):</strong> When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen fillings over one half of the omelette.</p>
+              </li>
+              <li class="instruction">
+                <p class="instruction__text"><strong class="instruction__highlight">Fold and serve:</strong> As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook for another minute, then slide it onto a plate.</p>
+              </li>
+              <li class="instruction">
+                <p class="instruction__text"><strong class="instruction__highlight">Enjoy:</strong> Serve hot, with additional salt and pepper if needed.</p>
+              </li>
+            </ol>
+          </section>
+          <hr class="separator">
+          <section id="nutrition" class="recipe__section">
+            <h2 class="recipe__section-title">Nutrition</h2>
+            <table class="table">
+              <caption class="table__caption">The table below shows nutritional values per serving without the additional fillings.</caption>
+              <tbody class="table__body">
+                <tr class="table__row">
+                  <th scope="row" class="table__header">Calories</th>
+                  <td class="table__data">277kcal</td>
+                </tr>
+                <tr class="table__row">
+                  <th scope="row" class="table__header">Carbs</th>
+                  <td class="table__data">0g</td>
+                </tr>
+                <tr class="table__row">
+                  <th scope="row" class="table__header">Protein</th>
+                  <td class="table__data">20g</td>
+                </tr>
+                <tr class="table__row">
+                  <th scope="row" class="table__header">Fat</th>
+                  <td class="table__data">22g</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+      </article>
+    </main>
   </body>
 </html>

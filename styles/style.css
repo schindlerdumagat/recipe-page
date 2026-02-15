@@ -1,0 +1,202 @@
+/* CSS RESETS */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, p {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+h1, h2 {
+  line-height: 1;    /* Set shorter line heights on headings and interactive elements */
+  text-wrap: balance;  /* Balance text wrapping on headings */
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Hiding class, making content visible only to screen readers but not visually */
+/* "sr" meaning "screen-reader" */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+/* FONTS */
+
+/* young-serif-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Young Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/young-serif-v2-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* outfit-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/outfit-v15-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* outfit-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../assets/fonts/outfit-v15-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* outfit-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/fonts/outfit-v15-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* CUSTOM VARIABLES */
+
+:root {
+
+  /* COLORS */
+
+  --clr-rose-800: hsl(332, 51%, 32%);
+  --clr-rose-50: hsl(330, 100%, 98%);
+  --clr-stone-900: hsl(24, 5%, 18%);
+  --clr-stone-600: hsl(30, 10%, 34%);
+  --clr-stone-150: hsl(30, 18%, 87%);
+  --clr-stone-100: hsl(30, 54%, 90%);
+  --clr-brown-800: hsl(14, 45%, 36%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  /* TYPOGRAPHY */
+  
+  --ff-body: "Outfit", sans-serif;
+  --ff-heading: "Young Serif", serif;
+  --fs-body: 1rem;
+  
+  /* SPACINGS */
+  
+  --space-1600: 8rem;
+  --space-600: 3rem;
+  --space-500: 2.5rem;
+  --space-400: 2rem;
+  --space-300: 1.5rem;
+  --space-200: 1rem;
+  --space-150: .75rem;
+  --space-100: .5rem;
+  
+  /* BORDER RADIUS */
+
+  --rounded-sm: 12px;
+  --rounded-md: 24px;
+
+}
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--clr-stone-600);
+  background-color: var(--clr-stone-100);
+  min-height: 100vh;
+}
+
+h1, h2 {
+  font-family: var(--ff-heading);
+}
+
+.recipe {
+  background-color: var(--clr-white);
+}
+
+.recipe__banner {
+  width: 100%;
+  height: auto;
+}
+
+.recipe__content {
+  padding-inline: clamp(var(--space-400), 1.5229rem + 2.0356vw, var(--space-500));
+  padding-block: var(--space-500);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-400);
+}
+
+.recipe__title {
+  font-size: clamp(2.25rem, 2.0115rem + 1.0178vw, 2.5rem);
+  font-weight: 400;
+  color: var(--clr-stone-900);
+  text-wrap: pretty;
+  margin-block-end: var(--space-300);
+}
+
+.separator {
+  border: 1px solid var(--clr-stone-150);
+}
+
+@media screen and (min-width: 48rem) {
+
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: var(--space-1600);
+  }
+
+  .recipe {
+    max-width: clamp(38.5rem, 29.9286rem + 17.8571vw, 46rem);
+    width: 100%;
+    padding: var(--space-500);
+    border-radius: var(--rounded-md);
+    margin: 0 auto;
+  }
+
+  .recipe__banner {
+    margin-block-end: var(--space-500);
+  }
+
+  .recipe__content {
+    padding: unset;
+  }
+
+}
