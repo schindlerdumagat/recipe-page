@@ -170,6 +170,13 @@ h1, h2 {
   margin-block-end: var(--space-300);
 }
 
+.recipe__section-title {
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--clr-brown-800);
+  margin-block-end: var(--space-300);
+}
+
 .recipe__section--preparation {
   background-color: var(--clr-rose-50);
   border-radius: var(--rounded-sm);
@@ -184,25 +191,80 @@ h1, h2 {
   margin-block-end: var(--space-200);
 }
 
-.timings {
+.timings, .ingredients, .instructions {
   display: flex;
   flex-direction: column;
   gap: var(--space-100);
   padding-inline-start: var(--space-100);
-  list-style-position: inside;
 }
 
-.timing {
+.timing, .ingredient {
   display: flex;
   align-items: center;
   gap: var(--space-400);
 }
 
-.timing::before {
+.timing::before, .ingredient::before {
   content: "\2022";
   font-size: 2rem;
   line-height: 0;
   color: var(--clr-rose-800);
+}
+
+.ingredient::before {
+  color: var(--clr-brown-800);
+}
+
+.instructions {
+  counter-reset: counter;
+}
+
+.instruction {
+  counter-increment: counter;
+  display: flex;
+  gap: var(--space-400);
+}
+
+.instruction::before {
+  content: counter(counter) ". ";
+  font-weight: 700;
+  color: var(--clr-brown-800);
+}
+
+.table {
+  width: 100%;
+}
+
+.table__caption {
+  text-align: start;
+  margin-block-end: var(--space-300);
+}
+
+.table__row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-200);
+  padding-inline: var(--space-400);
+}
+
+.table__row:not(:last-child) {
+  margin-block-end: var(--space-150);
+}
+
+.table__row + .table__row {
+  border-block-start: 2px solid var(--clr-stone-150);
+  padding-block-start: var(--space-150);
+
+}
+
+.table__header {
+  font-weight: 400;
+  text-align: start;
+}
+
+.table__data {
+  font-weight: 700;
+  color: var(--clr-brown-800);
 }
 
 .separator {
@@ -228,10 +290,10 @@ h1, h2 {
 
   .recipe__banner {
     margin-block-end: var(--space-500);
+    border-radius: var(--rounded-sm);
   }
 
   .recipe__content {
     padding: unset;
   }
-
 }
