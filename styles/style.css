@@ -170,6 +170,41 @@ h1, h2 {
   margin-block-end: var(--space-300);
 }
 
+.recipe__section--preparation {
+  background-color: var(--clr-rose-50);
+  border-radius: var(--rounded-sm);
+  padding: var(--space-300);
+}
+
+.recipe__title--preparation {
+  font-family: var(--ff-body);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--clr-rose-800);
+  margin-block-end: var(--space-200);
+}
+
+.timings {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-100);
+  padding-inline-start: var(--space-100);
+  list-style-position: inside;
+}
+
+.timing {
+  display: flex;
+  align-items: center;
+  gap: var(--space-400);
+}
+
+.timing::before {
+  content: "\2022";
+  font-size: 2rem;
+  line-height: 0;
+  color: var(--clr-rose-800);
+}
+
 .separator {
   border: 1px solid var(--clr-stone-150);
 }
